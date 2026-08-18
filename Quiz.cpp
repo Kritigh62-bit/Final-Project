@@ -38,3 +38,32 @@ public:
 
     virtual ~Question() {}
 };
+// MCQ CLASS
+class MCQ : public Question {
+private:
+    vector<string> options;
+
+public:
+
+    MCQ(string q, vector<string> opt, int answer, string cat)
+        : Question(q, answer, cat) {
+
+        options = opt;
+    }
+
+    // Polymorphism
+    void display() override {
+
+        cout << "\n" << questionText << endl;
+
+        for (int i = 0; i < options.size(); i++) {
+            cout << i + 1 << ". " << options[i] << endl;
+        }
+    }
+};
+
+
+            
+
+            
+
